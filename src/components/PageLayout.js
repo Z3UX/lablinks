@@ -1,10 +1,12 @@
 import React from 'react';
 import '../css/style.css';
 import Header from './Header';
+import MaterialCard from './MaterialCard';
 
 const PageLayout = () => (
-    <div class="main-wrapper">
+    <div>
         <Header/>
+        <MaterialCard/>
     </div>
 );
 
