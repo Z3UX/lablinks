@@ -8,7 +8,7 @@ const RelatedItems = ({relatedItems}) => {
         <div className="relatedItems">
             <h6>Related items</h6>
             <div className="relatedItemsCard">
-                <p>PLACEHOLDER</p>
+                <p>PLACEHOLDER {relatedItems}</p>
             </div>
 
             <style jsx>{`

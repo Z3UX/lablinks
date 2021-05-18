@@ -1,17 +1,17 @@
-import React, {useState} from 'react';
-import '../css/style.css';
-import Header from './Header';
-import MaterialCard from './MaterialCard';
+import React, {useState} from "react";
+import "../css/style.css";
+import Header from "./Header";
+import MaterialCard from "./MaterialCard";
 import RelatedItems from "./RelatedItems";
 
-const PageLayout = () => {
+const PageLayout = ({ articleID }) => {
 
     const [article, setArticle] = useState([]);
 
     React.useEffect(() => {
         async function fetchArticle() {
             const response = await fetch(
-                'https://my-json-server.typicode.com/Z3UX/lablinks-mock-api/0012'
+                "https://my-json-server.typicode.com/Z3UX/lablinks-mock-api/"+articleID
             ).then(res => res.json());
 
             setArticle(response);
