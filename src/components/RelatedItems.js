@@ -2,14 +2,33 @@ import React from 'react';
 
 const RelatedItems = ({relatedItems}) => {
 
-    console.log(relatedItems);
+    function pad_with_zeroes(number, length) {
+
+        let my_string = '' + number;
+        while (my_string.length < length) {
+            my_string = '0' + my_string;
+        }
+
+        return my_string;
+    }
+
+
+    function getRelatedItemsID(relatedItems) {
+        if (relatedItems) {
+            let arr = JSON.parse("[" + relatedItems + "]");
+
+            return arr.map(id => pad_with_zeroes(id, 4));
+        } else return [];
+    }
 
     return (
         <div className="relatedItems">
             <h6>Related items</h6>
-            <div className="relatedItemsCard">
-                <p>PLACEHOLDER {relatedItems}</p>
-            </div>
+            {getRelatedItemsID(relatedItems).map(id => (
+                <div className="relatedItemsCard" key={id}>
+                    <a href={id}><p>PLACEHOLDER {id}</p></a>
+                </div>
+            ))}
 
             <style jsx>{`
 
@@ -38,7 +57,6 @@ const RelatedItems = ({relatedItems}) => {
                 color: #414141;
                 margin: -15px 0 15px 10px;
               }
-
 
             `}</style>
         </div>

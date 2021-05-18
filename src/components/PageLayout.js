@@ -18,7 +18,7 @@ const PageLayout = ({ articleID }) => {
         }
 
         fetchArticle();
-    }, []);
+    }, [articleID]);
 
     return (
         <div className="pageLayoutDiv">

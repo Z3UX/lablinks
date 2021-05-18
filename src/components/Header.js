@@ -9,7 +9,7 @@ const Header = ({articleName}) => {
             </header>
 
             <style jsx>{`
-              
+
               h4 {
                 font-size: 24px;
                 font-weight: 600;
@@ -23,7 +23,7 @@ const Header = ({articleName}) => {
                 right: 0;
                 width: 100%;
               }
-              
+
               header {
                 background-color: #d9f2f4;
                 padding: 50px 20px;
