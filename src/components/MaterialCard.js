@@ -1,8 +1,6 @@
-import React from 'react';
+import React from "react";
 
 const MaterialCard = ({article}) => {
-
-    console.log(article);
 
     return (
         <div className="materialCard">
@@ -54,6 +52,7 @@ const MaterialCard = ({article}) => {
             </article>
 
             <style jsx>{`
+
               .row {
                 display: flex;
                 flex-direction: row;
@@ -71,9 +70,8 @@ const MaterialCard = ({article}) => {
 
               .materialCard {
                 position: relative;
-                top: 150px;
                 background: #fff;
-                margin: -25px 30px 29px;
+                margin: -25px 30px 30px;
                 border-radius: 10px;
                 box-shadow: 0 .125rem .25rem rgba(0, 0, 0, .075);
                 box-sizing: border-box;

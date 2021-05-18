@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import '../css/style.css';
 import Header from './Header';
 import MaterialCard from './MaterialCard';
+import RelatedItems from "./RelatedItems";
 
 const PageLayout = () => {
 
@@ -20,9 +21,20 @@ const PageLayout = () => {
     }, []);
 
     return (
-        <div>
+        <div className="pageLayoutDiv">
             <Header articleName={article.Name}/>
             <MaterialCard article={article}/>
+            <RelatedItems relatedItems={article["Related item IDs"]}/>
+
+            <style jsx>{`
+              
+              .pageLayoutDiv {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+              }
+            `}</style>
         </div>
     );
 };
