@@ -2,6 +2,12 @@ import React from "react";
 
 const MaterialCard = ({article}) => {
 
+    function getKeywords(keywords) {
+        if (keywords) {
+            return keywords.split(",");
+        } else return [];
+    }
+
     return (
         <div className="materialCard">
             <article>
@@ -27,24 +33,19 @@ const MaterialCard = ({article}) => {
                                 <li className="liCategory">Pharma</li>
                             </ul>
                             <div className="articleTags">Keywords</div>
-                            <ul>
-                                <li className="liKeywords">API</li>
-                            </ul>
-                            <ul>
-                                <li className="liKeywords">PAT</li>
-                            </ul>
-                            <ul>
-                                <li className="liKeywords">Quality by Design</li>
-                            </ul>
-                            <ul>
-                                <li className="liKeywords">QbD</li>
-                            </ul>
+                            {getKeywords(article.Keywords).map(keyword => (
+                                <ul key={keyword}>
+                                    <li className="liKeywords">
+                                        {keyword.charAt(0).toUpperCase()+keyword.slice(1)}
+                                    </li>
+                                </ul>
+                            ))}
                         </div>
                         <div className="column">
                             <div className="videoPlayer">
                                 <iframe className="responsiveIframe" src="https://player.vimeo.com/video/549218268"
                                         frameBorder="0"
-                                        allow="autoplay; fullscreen; picture-in-picture" allowFullScreen />
+                                        allow="autoplay; fullscreen; picture-in-picture" allowFullScreen/>
                             </div>
                         </div>
                     </div>

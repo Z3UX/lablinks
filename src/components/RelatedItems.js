@@ -3,20 +3,17 @@ import React from 'react';
 const RelatedItems = ({relatedItems}) => {
 
     function pad_with_zeroes(number, length) {
-
         let my_string = '' + number;
         while (my_string.length < length) {
             my_string = '0' + my_string;
         }
-
         return my_string;
     }
-
 
     function getRelatedItemsID(relatedItems) {
         if (relatedItems) {
             let arr = JSON.parse("[" + relatedItems + "]");
-
+            
             return arr.map(id => pad_with_zeroes(id, 4));
         } else return [];
     }
